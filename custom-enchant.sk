@@ -1,0 +1,17 @@
+options:
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§9DD§7] §8» §3
+	pc: §6
+	c1: §3
+	c2: §b
+
+command /customenchant <offlineplayer> <enchantment type> :
+	permission: avarizia.customenchant
+	permission message: {@pe}Dieser Befehl ist unseren Teammitgliedern vorbehalten.
+	trigger:
+		if arg-1 is online:
+			enchant arg-1's held item with arg-2
+			send "{@p}Dein Item wurde mit {@c2}%arg-2% {@c1}verzaubert." to arg-1
+			send "{@p}Du hast das Item von {@pc}%arg-1% {@c1}mit {@c2}%arg-2% {@c1}verzaubert."
+		else:
+			send "{@pe}Dieser Spieler ist nicht online!"
