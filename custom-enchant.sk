@@ -6,7 +6,7 @@ options:
 	c2: §b
 
 command /customenchant <offlineplayer> <enchantment type> :
-	permission: avarizia.customenchant
+	permission: dd.customenchant
 	permission message: {@pe}Dieser Befehl ist unseren Teammitgliedern vorbehalten.
 	trigger:
 		if arg-1 is online:
