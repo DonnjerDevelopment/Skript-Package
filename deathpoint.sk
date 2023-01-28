@@ -1,0 +1,29 @@
+options:
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§9DD§7] §8» §3
+	pc: §6
+	c1: §3
+	c2: §b
+
+	enable-tp: true
+
+on death:
+	set {deathpoint::%victim%::cords} to victim's location
+	set {deathpoint::%victim%::cords::x} to victim's x coordinate
+	set {deathpoint::%victim%::cords::y} to victim's y coordinate
+	set {deathpoint::%victim%::cords::z} to victim's z coordinate
+	
+	force victim to respawn
+	send "{@p}Dein Todespunkt befindet sich bei:" to victim
+	send "{@p}{@c1}X: {@c2}%{deathpoint::%victim%::cords::x}% {@c1}Y: {@c2}%{deathpoint::%victim%::cords::y}% {@c1}Z: {@c2}%{deathpoint::%victim%::cords::z}%" to victim
+	if {@enable-tp} is true:
+		send formatted "{@p}<command:/deathpoint>§7[{@c2}Teleport§7]" to victim
+	
+command /deathpoint [<string>]:
+	trigger:
+		if {@enable-tp} is true:
+			if {deathpoint::%player%::cords} is set:
+				teleport player to {deathpoint::%player%::cords}
+				clear {deathpoint::%player%::cords}
+		else:
+			send "{@pe}Das Teleport-Modul ist deaktiviert."
