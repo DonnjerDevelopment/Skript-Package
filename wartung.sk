@@ -2,11 +2,11 @@ options: # Diese Zeile nicht löschen, ansonsten funktioniert das Skript nicht m
 
 
 # Config
-
-	p: §5DDSP §7> §6		# Prefix für Chatnachrichten
-	pe: §cError §7> §c		# Prefix für Fehlernachrichten
-	c1: §6					# Farbe 1
-	c2: §e					# Farbe 2
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§9DD§7] §8» §3
+	pc: §6
+	c1: §3
+	c2: §b
 
 	permission: ddsp.wartungsmodus
 	normal-bypass: .bypass
