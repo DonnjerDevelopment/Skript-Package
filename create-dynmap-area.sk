@@ -1,0 +1,42 @@
+command /createarea [<string>] [<string>] [<string>] [<string>]:
+	permission: dd.dynmaparea
+	usage: <check|execute|cords1|cords2|title|color>
+	trigger:
+		if arg-1 is "check":
+			send "Name: %{ca::title}%"
+			send "Cords1: X:%{ca::x1}% Y:%{ca::y1}% Z:%{ca::z1}%"
+			send "Cords2: X:%{ca::x2}% Y:%{ca::y2}% Z:%{ca::z2}%"
+			send "Color: %{ca::color}%"
+		
+		if arg-1 is "execute":
+			send "{@p}Gebiet wird erstellt. Bitte warten."
+			make player execute "//pos1 %{ca::x1}%,%{ca::y1}%,%{ca::z1}%"
+			make player execute "//pos2 %{ca::x2}%,%{ca::y2}%,%{ca::z2}%"
+			wait 1 tick
+			make player execute "//expand vert"
+			wait 1 tick
+			make player execute "/rg define %{ca::title}%"
+			wait 1 tick
+			make player execute "/dmarker clearcorners"
+			wait 1 tick
+			make player execute "/dmarker addcorner %{ca::x1}% %{ca::y1}% %{ca::z1}% %player's world%"
+			wait 1 tick
+			make player execute "/dmarker addcorner %{ca::x2}% %{ca::y2}% %{ca::z2}% %player's world%"
+			wait 1 tick
+			make player execute "/dmarker addarea boost:true color:%{ca::color}% fillcolor:%{ca::color}% opacity:0.1 label:%{ca::title}% set:Städte"
+		
+		if arg-1 is "cords1":
+			set {ca::x1} to arg-2
+			set {ca::y1} to arg-3
+			set {ca::z1} to arg-4
+		
+		if arg-1 is "cords2":
+			set {ca::x2} to arg-2
+			set {ca::y2} to arg-3
+			set {ca::z2} to arg-4
+		
+		if arg-1 is "title":
+			set {ca::title} to arg-2
+		
+		if arg-1 is "color":
+			set {ca::color} to arg-2

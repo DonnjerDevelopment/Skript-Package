@@ -1,0 +1,24 @@
+options:
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§9DD§7] §8» §3
+	pc: §6
+	c1: §3
+	c2: §b
+
+variables:
+	{d2i::%player%} = true
+	
+on mine:
+	if {d2i::%player%} is true:
+		if player has enough space for drops of block using player's tool:
+			give player drops of block using player's tool
+			cancel item drops
+		
+command /drop2inv [<string>]:
+	trigger:
+		if {d2i::%player%} is true:
+			set {d2i::%player%} to false
+			send "{@p}Der Drop-2-Inventory Modus wurde ausgeschaltet."
+		else:
+			set {d2i::%player%} to true
+			send "{@p}Der Drop-2-Inventory Modus wurde eingeschaltet."
