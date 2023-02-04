@@ -1,0 +1,9 @@
+command /masskick [<string>]:
+	permission: dd.team.masskick
+	trigger:
+		if arg-1 is not set:
+			send "§a/masskick §7<§eGrund §7| §cconfirm§7>"
+		else if arg-1 is "confirm":
+			kick all players due to "§4§l✖✖✖ §9DD §7| §b§lMasskick §4§l✖✖✖ %newline% %newline% §3Alle Spieler wurden vom Server geworfen. %newline%Ein Grund wurde nicht angegeben.%newline%%newline%§cAusführendes Teammitglied: §6%player%%newline%%newline%§4§l✖✖✖ §9DD §7| §b§lMasskick §4§l✖✖✖"
+		else:
+			kick all players due to "§4§l✖✖✖ §9DD §7| §b§lMasskick §4§l✖✖✖ %newline% %newline% §3Alle Spieler wurden vom Server geworfen. %newline%Der Grund dafür ist: §e%arg-1%.%newline%%newline%§cAusführendes Teammitglied: §6%player%%newline%%newline%§4§l✖✖✖ §9DD §7| §b§lMasskick §4§l✖✖✖"
