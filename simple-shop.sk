@@ -1,3 +1,10 @@
+options:
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§9DD§7] §8» §3
+	pc: §6
+	c1: §3
+	c2: §b
+
 command /shop [<string>]:
 	trigger:
 		set {_g} to a chest inventory with 3 rows named "§5Shop"
@@ -40,7 +47,7 @@ on inventory click:
 	
 on drink of potion:
 	cancel event
-	name of event-item is "test"
+	name of event-item is "§7§lTraum des Bergmanns"
 	apply haste 30 to player for 300 seconds
 	play sound "entity.firework_rocket.twinkle" to player
 	remove event-item from player's inventory
