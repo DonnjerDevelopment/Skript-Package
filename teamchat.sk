@@ -1,0 +1,20 @@
+options:
+	pe: §7[§4§lERROR§7] §8» §c
+	p: §7[§5Avarizia§7] §8» §6
+	pc: §d
+	c1: §6
+	c2: §e
+	permission: dd.teamchat
+	
+command /teamchat [<string>]:
+	aliases: tc
+	permission: {@permission}
+	permission message: {@pe}Dieser Befehl ist unseren Teammitgliedern vorbehalten.
+	trigger:
+		if arg-1 is set:
+			loop all players:
+				loop-player has permission "{@permission}"
+				send "§7[§4Teamchat§7] {@pc}%event-player% §7» §c%arg-1%" to loop-player
+		else:
+			send "{@pe}Du musst eine Nachricht eingeben!"
+			send "{@pe}§a/teamchat §7<{@c2}Nachricht§7>"

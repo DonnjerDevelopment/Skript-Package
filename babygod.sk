@@ -1,0 +1,14 @@
+variables:
+	{babygod::%player%} = false
+
+on join:
+	set {babygod::%player%} to true
+	wait 15 seconds
+	set {babygod::%player%} to false
+	send action bar "§c§oDein Spawnschutz ist jetzt abgelaufen." to player
+	
+on damage:
+	victim is a player
+	{babygod::%victim%} is true
+	cancel event
+	
