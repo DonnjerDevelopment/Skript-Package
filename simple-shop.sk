@@ -10,9 +10,9 @@ command /shop [<string>]:
 		set {_g} to a chest inventory with 3 rows named "§5Shop"
 		loop 27 times:
 			set slot loop-value - 1 of {_g} to gray stained glass pane named "&7"
-		set slot 10 of {_g} to a netherite pickaxe named "&c&k||| &4&lSpawner Miner &c&k|||" with lore "§eBaut genau einen Spawner ab." and "" and "§cKosten: §e50.000 Gulden" and "§7§oKaufen mit Rechtsklick."
-		set slot 13 of {_g} to a torch named "§a§lWurffackel" with lore "§ePlatziere Fackeln auf Distanz." and "" and "§cKosten: §e50 Gulden §7(für 10 Fackeln)" and "§7§oKaufen mit Rechtsklick."
-		set slot 16 of {_g} to a potion named "§7§lTraum des Bergmanns"
+		set slot 10 of {_g} to a netherite pickaxe named "&c&k||| &4&lSpawner Miner &c&k|||" with lore "§eBaut genau einen Spawner ab." and "" and "§cKosten: §e75.000 Gulden" and "§7§oKaufen mit Rechtsklick."
+		set slot 13 of {_g} to a torch named "§a§lWurffackel" with lore "§ePlatziere Fackeln auf Distanz." and "" and "§cKosten: §e500 Gulden §7(für 10 Fackeln)" and "§7§oKaufen mit Rechtsklick."
+		set slot 16 of {_g} to a potion named "§7§lTraum des Bergmanns" with lore "§cKosten: §e10.000 Gulden"
 		open {_g} to player
 
 on inventory click:
